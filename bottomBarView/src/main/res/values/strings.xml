@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">BottomBarView</string>
+    <array name="drawable_id">
+        <item>@drawable/ic_local_taxi</item>
+        <item>@drawable/ic_local_taxi</item>
+        <item>@drawable/ic_local_taxi</item>
+    </array>
+    <array name="button_text">
+        <item>Waiting</item>
+        <item>Boarded</item>
+        <item>Reached</item>
+        <item>Waiting</item>
+        <item>Boarded</item>
+        <item>Reached</item>
+        <item>Waiting</item>
+        <item>Boarded</item>
+        <item>Reached</item>
+        <item>Waiting</item>
+        <item>Boarded</item>
+        <item>Reached</item>
+        <item>Waiting</item>
+        <item>Boarded</item>
+        <item>Reached</item>
+        <item>Waiting</item>
+        <item>Boarded</item>
+        <item>Reached</item>
+        <item>Waiting</item>
+        <item>Boarded</item>
+        <item>Reached</item>
+    </array>
+</resources>

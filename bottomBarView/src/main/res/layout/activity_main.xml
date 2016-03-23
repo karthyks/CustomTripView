@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.karthyks.bottombarview.MainActivity">
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <ImageButton
+                android:layout_width="match_parent"
+                android:layout_height="1000dp"
+                android:background="@color/bottomBarDark"/>
+            <ImageButton
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="@color/bottomBarButtonTintDark"/>
+        </LinearLayout>
+    </ScrollView>
+    <com.karthyks.bottombarview.views.BottomBarView
+        android:id="@+id/bottom_bar_nav"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:bottomBarColor="@color/bottomBarDark">
+
+    </com.karthyks.bottombarview.views.BottomBarView>
+</FrameLayout>

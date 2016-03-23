@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CustomRoundedButton">
+        <attr name="button_normal" format="reference"/>
+        <attr name="button_background" format="reference"/>
+        <attr name="button_text" format="string"/>
+        <attr name="button_text_size" format="integer"/>
+    </declare-styleable>
+</resources>
