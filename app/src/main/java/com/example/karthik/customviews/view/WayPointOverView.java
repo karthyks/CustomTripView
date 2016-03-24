@@ -33,6 +33,7 @@ public class WayPointOverView extends AbstractTripView {
   }
 
   @Override public void onRenderView() {
+    getActionBar().show();
     employeeList = new LinkedList<>();
     for (int i = 0; i < 6; i++) {
       Employee employee = new Employee();
