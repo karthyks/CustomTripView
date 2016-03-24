@@ -84,8 +84,8 @@ public class SafetraxTrip extends FrameLayout implements IRootViewCallback {
     if (keyCode == KeyEvent.KEYCODE_BACK) {
       switch (tripRootView.getDisplayedChild()) {
         case CONTENT_TRIP_OVERVIEW:
-          tripOverView.onDestroyView();
           //displayChild(tripListView, CONTENT_TRIP_LIST);
+          tripOverView.onDestroyView();
           break;
         case CONTENT_WAYPOINT_DETAILS:
           displayChild(tripOverView, CONTENT_TRIP_OVERVIEW);
