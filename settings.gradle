@@ -1,1 +1,1 @@
-include ':app', ':bottomBarView'
+include ':app'

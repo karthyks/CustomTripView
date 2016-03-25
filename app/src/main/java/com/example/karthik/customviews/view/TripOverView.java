@@ -19,13 +19,13 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.example.karthik.customviews.custom.AbstractTripView;
 import com.example.karthik.customviews.R;
+import com.example.karthik.customviews.custom.AbstractTripView;
 import com.example.karthik.customviews.custom.CircleTransformation;
 import com.example.karthik.customviews.other.GridImageAdapter;
-import com.karthyks.bottombarview.drawable.BBNDrawable;
-import com.karthyks.bottombarview.views.BottomBarButton;
-import com.karthyks.bottombarview.views.BottomBarView;
+import com.github.karthyks.bottombarnavigation.drawable.BBNDrawable;
+import com.github.karthyks.bottombarnavigation.views.BottomBarButton;
+import com.github.karthyks.bottombarnavigation.views.BottomBarView;
 import com.squareup.picasso.Picasso;
 
 import java.util.LinkedList;
@@ -108,32 +108,25 @@ public class TripOverView extends AbstractTripView implements View.OnClickListen
         BBNDrawable.PRESSED_STATE))
         .setButtonText("Waiting")
         .setTextColors(ContextCompat.getColor(getContext(),
-            com.karthyks.bottombarview.R.color.bottomBarTextNormal),
+            R.color.bottomBarTextNormal),
             ContextCompat.getColor(getContext(),
-                com.karthyks.bottombarview.R.color.bottomBarTextPressed))
+                R.color.bottomBarTextPressed))
         .setBgColor(Color.GRAY)
         .build();
-    bbnBoarded.setButtonDrawables(new BBNDrawable(getContext(),
-            com.karthyks.bottombarview.R.drawable.ic_local_taxi,
+    bbnBoarded.setButtonDrawables(new BBNDrawable(getContext(), R.drawable.ic_local_taxi,
             BBNDrawable.NORMAL_STATE),
-        new BBNDrawable(getContext(), com.karthyks.bottombarview.R.drawable.ic_local_taxi,
+        new BBNDrawable(getContext(), R.drawable.ic_local_taxi,
             BBNDrawable.PRESSED_STATE))
         .setButtonText("Boarded")
-        .setTextColors(ContextCompat.getColor(getContext(),
-            com.karthyks.bottombarview.R.color.bottomBarTextNormal),
-            ContextCompat.getColor(getContext(),
-                com.karthyks.bottombarview.R.color.bottomBarTextPressed))
+        .setTextColors(ContextCompat.getColor(getContext(), R.color.bottomBarTextNormal),
+            ContextCompat.getColor(getContext(), R.color.bottomBarTextPressed))
         .build();
-    bbnReached.setButtonDrawables(new BBNDrawable(getContext(),
-            com.karthyks.bottombarview.R.drawable.ic_local_taxi,
+    bbnReached.setButtonDrawables(new BBNDrawable(getContext(), R.drawable.ic_local_taxi,
             BBNDrawable.NORMAL_STATE),
-        new BBNDrawable(getContext(), com.karthyks.bottombarview.R.drawable.ic_local_taxi,
-            BBNDrawable.PRESSED_STATE))
+        new BBNDrawable(getContext(), R.drawable.ic_local_taxi, BBNDrawable.PRESSED_STATE))
         .setButtonText("Reached")
-        .setTextColors(ContextCompat.getColor(getContext(),
-            com.karthyks.bottombarview.R.color.bottomBarTextNormal),
-            ContextCompat.getColor(getContext(),
-                com.karthyks.bottombarview.R.color.bottomBarTextPressed))
+        .setTextColors(ContextCompat.getColor(getContext(), R.color.bottomBarTextNormal),
+            ContextCompat.getColor(getContext(), R.color.bottomBarTextPressed))
         .build();
     bbnWaiting.setOnClickListener(this);
     bbnBoarded.setOnClickListener(this);
