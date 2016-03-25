@@ -8,24 +8,33 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import com.crashlytics.android.Crashlytics;
 import com.example.karthik.customviews.R;
+import com.example.karthik.customviews.logging.LogDog;
 import com.example.karthik.customviews.other.ExampleActivity;
+import io.fabric.sdk.android.Fabric;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
   private static final String TAG = MainActivity.class.getSimpleName();
 
   private Button button;
+
   @Override protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
+    Fabric.with(this, new Crashlytics());
     setContentView(R.layout.activity_main);
     injectViews();
+    try {
+      button.setOnClickListener(this);
+    } catch (Exception e) {
+      Crashlytics.log(Log.ERROR, TAG, e.toString() + " : " + new LogDog(this).logAll(TAG));
+    }
   }
 
   private void injectViews() {
     Log.d(TAG, "injectViews: ");
-    button = (Button) findViewById(R.id.button);
-    button.setOnClickListener(this);
+    findViewById(R.id.button).setOnClickListener(this);
   }
 
   public static Intent getIntent(Context activity) {
@@ -34,6 +43,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
   }
 
   @Override public void onClick(View v) {
+    new LogDog(this).logAll(TAG);
     startActivity(ExampleActivity.getIntent(this));
   }
 }
