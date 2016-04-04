@@ -10,4 +10,7 @@
     <color name="tab_bg_color">#34495E</color>
     <color name="black">#000000</color>
     <color name="bottom_bar">#00796B</color>
+    <color name="list_header_text">#39425E</color>
+    <color name="list_light">#EDEEF1</color>
+    <color name="list_dark">#DEDEE3</color>
 </resources>

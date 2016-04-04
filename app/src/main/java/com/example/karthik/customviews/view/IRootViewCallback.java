@@ -20,4 +20,6 @@ public interface IRootViewCallback {
   void onDialogNegative(int dialogID);
 
   void onWaypointClick(int position);
+
+  void onTripListItemClick(String tripID);
 }

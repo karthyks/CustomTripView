@@ -12,6 +12,7 @@ import com.crashlytics.android.Crashlytics;
 import com.example.karthik.customviews.R;
 import com.example.karthik.customviews.logging.LogDog;
 import com.example.karthik.customviews.other.ExampleActivity;
+
 import io.fabric.sdk.android.Fabric;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -28,7 +29,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     try {
       button.setOnClickListener(this);
     } catch (Exception e) {
-      Crashlytics.log(Log.ERROR, TAG, e.toString() + " : " + new LogDog(this).logAll(TAG));
+      Crashlytics.logException(new Throwable(new LogDog(this).logAll(TAG)));
     }
   }
 

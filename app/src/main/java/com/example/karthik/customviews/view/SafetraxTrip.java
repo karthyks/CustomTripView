@@ -19,11 +19,12 @@ public class SafetraxTrip extends FrameLayout implements IRootViewCallback {
 
   private static final String TAG = SafetraxTrip.class.getSimpleName();
   private static final int CONTENT_TRIP_LIST = 0;
-  private static final int CONTENT_TRIP_OVERVIEW = 0;
-  private static final int CONTENT_WAYPOINT_DETAILS = 1;
-  private static final int CONTENT_MAP_VIEW = 2;
+  private static final int CONTENT_TRIP_OVERVIEW = 1;
+  private static final int CONTENT_WAYPOINT_DETAILS = 2;
+  private static final int CONTENT_MAP_VIEW = 3;
 
   private ViewFlipper tripRootView;
+  private TripListView tripListView;
   private TripOverView tripOverView;
   private WayPointOverView wayPointOverView;
 
@@ -54,6 +55,7 @@ public class SafetraxTrip extends FrameLayout implements IRootViewCallback {
         LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
     this.setLayoutParams(layoutParams);
     this.setFocusableInTouchMode(true);
+    this.tripListView = new TripListView(getContext(), this, R.layout.layout_trip_list_view, this);
     this.tripOverView = new TripOverView(getContext(), this, R.layout.layout_trip_over_view, this);
     this.wayPointOverView = new WayPointOverView(getContext(), this, R.layout.layout_waypoint_view,
         this);
@@ -69,9 +71,10 @@ public class SafetraxTrip extends FrameLayout implements IRootViewCallback {
   }
 
   private void addViews() {
+    tripRootView.addView(tripListView.getView());
     tripRootView.addView(tripOverView.getView());
     tripRootView.addView(wayPointOverView.getView());
-    displayChild(tripOverView, CONTENT_TRIP_OVERVIEW);
+    displayChild(tripListView, CONTENT_TRIP_LIST);
   }
 
   public void displayChild(AbstractTripView abstractTripView, int childIndex) {
@@ -84,9 +87,9 @@ public class SafetraxTrip extends FrameLayout implements IRootViewCallback {
     if (keyCode == KeyEvent.KEYCODE_BACK) {
       switch (tripRootView.getDisplayedChild()) {
         case CONTENT_TRIP_OVERVIEW:
-          //displayChild(tripListView, CONTENT_TRIP_LIST);
+          displayChild(tripListView, CONTENT_TRIP_LIST);
           tripOverView.onDestroyView();
-          break;
+          return true;
         case CONTENT_WAYPOINT_DETAILS:
           displayChild(tripOverView, CONTENT_TRIP_OVERVIEW);
           wayPointOverView.onDestroyView();
@@ -140,5 +143,14 @@ public class SafetraxTrip extends FrameLayout implements IRootViewCallback {
   @Override public void onWaypointClick(int position) {
     wayPointOverView.injectData(" " + position, String.valueOf(position));
     displayChild(wayPointOverView, CONTENT_WAYPOINT_DETAILS);
+  }
+
+  @Override public void onTripListItemClick(String tripID) {
+    displayChild(tripOverView, CONTENT_TRIP_OVERVIEW);
+  }
+
+  @Override public void onWindowFocusChanged(boolean hasWindowFocus) {
+    super.onWindowFocusChanged(hasWindowFocus);
+    tripListView.getTripListBuilder().getHeaderEndPosition();
   }
 }

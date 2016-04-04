@@ -62,6 +62,7 @@ public class TripOverView extends AbstractTripView implements View.OnClickListen
 
   @Override public void onRenderView() {
     getActionBar().hide();
+    Log.d(TAG, "onRenderView: ");
     fabMapView.setOnClickListener(this);
     gridView.setAdapter(new GridImageAdapter(getContext()));
     Picasso.with(getContext()).load(USER_IMAGE)
@@ -216,6 +217,7 @@ public class TripOverView extends AbstractTripView implements View.OnClickListen
 
   @Override
   public void onDestroyView() {
+    getActionBar().show();
     fabMapView.setOnClickListener(null);
     gridView.setAdapter(null);
     listViewWaypointsList.setAdapter(null);
