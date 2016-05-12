@@ -1,0 +1,10 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:msafe="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/btn_insert_contact"
+        android:icon="@android:drawable/btn_plus"
+        android:orderInCategory="1"
+        android:title="Insert"
+        msafe:showAsAction="always"/>
+
+</menu>

@@ -12,6 +12,7 @@ import com.crashlytics.android.Crashlytics;
 import com.example.karthik.customviews.R;
 import com.example.karthik.customviews.logging.LogDog;
 import com.example.karthik.customviews.other.ExampleActivity;
+import com.example.karthik.customviews.settings.SettingsHelpActivity;
 
 import io.fabric.sdk.android.Fabric;
 
@@ -45,6 +46,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
   @Override public void onClick(View v) {
     new LogDog(this).logAll(TAG);
-    startActivity(ExampleActivity.getIntent(this));
+//    startActivity(ExampleActivity.getIntent(this));
+    startActivity(new Intent(this, SettingsHelpActivity.class));
   }
 }

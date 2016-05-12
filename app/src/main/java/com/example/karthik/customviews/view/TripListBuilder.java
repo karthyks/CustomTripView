@@ -2,14 +2,12 @@ package com.example.karthik.customviews.view;
 
 import android.content.Context;
 import android.os.Build;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
-import com.example.karthik.customviews.R;
 import com.example.karthik.customviews.other.RecyclerViewPositionHelper;
 import com.example.karthik.customviews.other.TripListAdapter;
 

@@ -2,4 +2,9 @@
 <resources>
     <string name="app_name">CustomView</string>
     <string name="title_activity_action_button">ActionButtonActivity</string>
+    <string-array name="emergency_groups">
+        <item>Personal</item>
+        <item>Office</item>
+        <item>Friends</item>
+    </string-array>
 </resources>

@@ -43,6 +43,7 @@ dependencies {
     compile 'com.android.support:cardview-v7:23.1.1'
     compile 'com.android.support:design:23.1.1'
     compile 'com.github.karthyks:bottombarnavigation:0.1'
+    compile 'com.github.vignesh-iopex:confirmdialog:2.0-rc1'
     compile('com.crashlytics.sdk.android:crashlytics:2.5.5@aar') {
         transitive = true;
     }
